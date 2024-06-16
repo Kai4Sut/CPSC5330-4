@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,96 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CPSC5330_Project4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="am" translatesAutoresizingMaskIntoConstraints="NO" id="YbW-YV-sdA" userLabel="AM Background">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pm" translatesAutoresizingMaskIntoConstraints="NO" id="RYX-ys-mHC" userLabel="PM Background">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ddZ-WL-wUY">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL0-na-Nts">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="264.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-XY-ZZM">
+                                        <rect key="frame" x="0.0" y="264.33333333333337" width="393" height="264.33333333333337"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-iW-0gE">
+                                        <rect key="frame" x="0.0" y="528.66666666666663" width="393" height="264.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwM-oQ-STq">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="132.33333333333334"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Start Timer/ Stop Music"/>
+                                                <connections>
+                                                    <action selector="ButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQN-Bc-xjA"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Elx-5N-8uj">
+                                                <rect key="frame" x="0.0" y="132.33333333333337" width="393" height="132"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Elx-5N-8uj" firstAttribute="leading" secondItem="ap6-iW-0gE" secondAttribute="leading" id="3lX-0y-L9R"/>
+                                            <constraint firstAttribute="bottom" secondItem="Elx-5N-8uj" secondAttribute="bottom" id="iw6-8y-9Xe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Elx-5N-8uj" secondAttribute="trailing" id="jgi-EZ-rol"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RYX-ys-mHC" secondAttribute="bottom" id="17v-1a-Cw2"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="93b-lx-hIa"/>
+                            <constraint firstAttribute="bottom" secondItem="ddZ-WL-wUY" secondAttribute="bottom" id="9gO-em-qnk"/>
+                            <constraint firstItem="YbW-YV-sdA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Aek-72-IrW"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EGo-6v-o0n"/>
+                            <constraint firstItem="YbW-YV-sdA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="IuP-jV-ITd"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KsK-8S-VPj"/>
+                            <constraint firstItem="YbW-YV-sdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UmI-hu-UGV"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WMP-ux-NK7"/>
+                            <constraint firstItem="YbW-YV-sdA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZA2-s8-7Tk"/>
+                            <constraint firstItem="YbW-YV-sdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aBx-QX-2l9"/>
+                            <constraint firstItem="ddZ-WL-wUY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fAG-kc-JhJ"/>
+                            <constraint firstItem="ddZ-WL-wUY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fEM-gE-lrH"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="g6k-ll-HIe"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="YbW-YV-sdA" secondAttribute="bottom" id="imX-Tz-Bvw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ddZ-WL-wUY" secondAttribute="trailing" id="sgc-4o-c5N"/>
+                            <constraint firstItem="RYX-ys-mHC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uRI-nS-vEQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Button" destination="BwM-oQ-STq" id="uOQ-rW-tXi"/>
+                        <outlet property="CurrentTime" destination="vL0-na-Nts" id="V8u-2j-mci"/>
+                        <outlet property="PMBrackground" destination="RYX-ys-mHC" id="6Ad-Kl-7Tu"/>
+                        <outlet property="TimeBackground" destination="YbW-YV-sdA" id="fbi-ZJ-hFd"/>
+                        <outlet property="Timer" destination="DqF-XY-ZZM" id="Nzv-rq-9qQ"/>
+                        <outlet property="TimerDisplay" destination="Elx-5N-8uj" id="mGa-Hz-3Lp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="4.9295774647887329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="am" width="112.33333587646484" height="90"/>
+        <image name="pm" width="150" height="100"/>
+    </resources>
 </document>
