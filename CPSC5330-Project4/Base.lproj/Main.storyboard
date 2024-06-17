@@ -89,7 +89,7 @@
                         <outlet property="CurrentTime" destination="vL0-na-Nts" id="V8u-2j-mci"/>
                         <outlet property="PMBrackground" destination="RYX-ys-mHC" id="6Ad-Kl-7Tu"/>
                         <outlet property="TimeBackground" destination="YbW-YV-sdA" id="fbi-ZJ-hFd"/>
-                        <outlet property="TimerDisplay" destination="DqF-XY-ZZM" id="SkN-gf-f5v"/>
+                        <outlet property="TimerDisplay" destination="Elx-5N-8uj" id="Mwf-j6-4g4"/>
                         <outlet property="TimerUtil" destination="DqF-XY-ZZM" id="57H-Hq-q51"/>
                     </connections>
                 </viewController>

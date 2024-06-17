@@ -23,9 +23,11 @@ class ViewController: UIViewController {
     let currentFormatter = DateFormatter()
     let backgroundFormatter = DateFormatter()
     let timeFormatter = DateComponentsFormatter()
+ 
     
     var duration: TimeInterval = 0
     var timecounter = Timer()
+    var datetimer = Timer()
 
     
 
@@ -35,14 +37,13 @@ class ViewController: UIViewController {
         currentFormatter.dateFormat = ("EE, dd MMMM yyyy  HH:mm:ss")
         
         CurrentTime.text = currentFormatter.string(from: date)
+        datetimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(dateCounter), userInfo: nil, repeats: true)
         
         // Choose Background on Load
         ChooseBackground()
         
         // Show Timer Label
-        TimerUtil.countDownDuration = 60
-
-        TimerDisplay.text = "Time Remaining: "
+        TimerDisplay.text = "Time Remaining: \(timestring(time:duration))"
     }
 
     
@@ -69,6 +70,7 @@ class ViewController: UIViewController {
     @IBAction func ButtonPress(_ sender: UIButton) {
         // Assign Timer Countdown i
         duration = TimerUtil.countDownDuration
+        timecounter.invalidate()
         
         if duration != 0 {
             // Start timer if countdown not at zero
@@ -86,7 +88,7 @@ class ViewController: UIViewController {
     @objc func startCounter() {
         if duration > 0 {
             //reduce timer duration by 1 second
-            TimerDisplay.text = "Time Remaining : \(duration)"            
+            TimerDisplay.text = "Time Remaining : \(timestring(time:duration))"
             duration -= 1
             
         } else {
@@ -94,6 +96,22 @@ class ViewController: UIViewController {
             timecounter.invalidate()
             
         }
+        //End startCounter
     }
+    
+    @objc func dateCounter() {
+
+            currentFormatter.dateFormat = ("EE, dd MMMM yyyy  HH:mm:ss")
+            CurrentTime.text = currentFormatter.string(from: Date())
+            }
+    
+    
+    func timestring(time:TimeInterval) -> String{
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
 }
 
