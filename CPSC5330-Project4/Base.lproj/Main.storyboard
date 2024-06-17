@@ -89,8 +89,8 @@
                         <outlet property="CurrentTime" destination="vL0-na-Nts" id="V8u-2j-mci"/>
                         <outlet property="PMBrackground" destination="RYX-ys-mHC" id="6Ad-Kl-7Tu"/>
                         <outlet property="TimeBackground" destination="YbW-YV-sdA" id="fbi-ZJ-hFd"/>
-                        <outlet property="Timer" destination="DqF-XY-ZZM" id="Nzv-rq-9qQ"/>
-                        <outlet property="TimerDisplay" destination="Elx-5N-8uj" id="mGa-Hz-3Lp"/>
+                        <outlet property="TimerDisplay" destination="DqF-XY-ZZM" id="SkN-gf-f5v"/>
+                        <outlet property="TimerUtil" destination="DqF-XY-ZZM" id="57H-Hq-q51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,14 +16,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var TimerDisplay: UILabel!
     @IBOutlet weak var Button: UIButton!
-    @IBOutlet weak var Timer: UIDatePicker!
+    @IBOutlet weak var TimerUtil: UIDatePicker!
     @IBOutlet weak var CurrentTime: UILabel!
     
     let date = Date()
     let currentFormatter = DateFormatter()
     let backgroundFormatter = DateFormatter()
+    let timeFormatter = DateComponentsFormatter()
     
     var duration: TimeInterval = 0
+    var timecounter = Timer()
+
     
 
     override func viewDidLoad() {
@@ -37,7 +40,9 @@ class ViewController: UIViewController {
         ChooseBackground()
         
         // Show Timer Label
-        TimerDisplay.text = "Enter Timer Text Here"
+        TimerUtil.countDownDuration = 60
+
+        TimerDisplay.text = "Time Remaining: "
     }
 
     
@@ -61,13 +66,13 @@ class ViewController: UIViewController {
         // End ChooseBackground
     }
     
-    @IBAction func ButtonPress(_ sender: Any) {
+    @IBAction func ButtonPress(_ sender: UIButton) {
         // Assign Timer Countdown i
-        duration = Timer.countDownDuration
+        duration = TimerUtil.countDownDuration
         
         if duration != 0 {
             // Start timer if countdown not at zero
-            
+            timecounter = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startCounter), userInfo: nil, repeats: true)
             
         } else {
             // If timer countdown = 0, stop music
@@ -78,6 +83,17 @@ class ViewController: UIViewController {
        //End ButtonPress
     }
     
-    
+    @objc func startCounter() {
+        if duration > 0 {
+            //reduce timer duration by 1 second
+            TimerDisplay.text = "Time Remaining : \(duration)"            
+            duration -= 1
+            
+        } else {
+            // invalidate timer and start music
+            timecounter.invalidate()
+            
+        }
+    }
 }
 
